@@ -1,37 +1,37 @@
 <template>
-	<div>
-		<button @click="showModal = true">Open</button>
-		<transition name="modal">
-			<div class="modal-mask" v-if="showModal">
-				<div class="overlay" @click="showModal = false"></div>
-				<div class="modal-wrapper">
-					<div class="modal-container">
+  <div>
+    <button @click="showModal = true">Open</button>
+    <transition name="modal">
+      <div class="modal-mask" v-if="showModal">
+        <div class="overlay" @click="showModal = false"></div>
+        <div class="modal-wrapper">
+          <div class="modal-container">
 
-						<div class="modal-header">
-							<slot name="header">
-								default header
-							</slot>
-						</div>
+            <div class="modal-header">
+              <slot name="header">
+                default header
+              </slot>
+            </div>
 
-						<div class="modal-body">
-							<slot name="body">
-								default body
-							</slot>
-						</div>
+            <div class="modal-body">
+              <slot name="body">
+                default body
+              </slot>
+            </div>
 
-						<div class="modal-footer">
-							<slot name="footer">
-								default footer
-								<button class="modal-default-button" @click="showModal = false">
-									OK
-								</button>
-							</slot>
-						</div>
-					</div>
-				</div>
-			</div>
-		</transition>
-	</div>
+            <div class="modal-footer">
+              <slot name="footer">
+                default footer
+                <button class="modal-default-button" @click="showModal = false">
+                  OK
+                </button>
+              </slot>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script>
